@@ -14,18 +14,15 @@
 
 <body>
 
-    <!-- Backgrounds -->
     <div class="bg-scene"></div>
     <div class="grain-overlay"></div>
     <div class="grid-overlay"></div>
     <div class="scanline"></div>
 
-    <!-- Terminal Loader -->
     <div id="terminal-overlay">
         <div id="terminal-lines"></div>
     </div>
 
-    <!-- ══════════════ HERO ══════════════ -->
     <header id="hero">
         <div class="container">
             <div class="hero-status">
@@ -45,7 +42,6 @@
                 <a href="#contacts" class="btn-secondary">Связаться →</a>
             </div>
 
-            <!-- Live AI Terminal Bar -->
             <div class="ai-terminal-bar">
                 <span class="prompt">jarvis@bael-os:~$</span>
                 <span id="terminal-text"></span>
@@ -54,7 +50,6 @@
         </div>
     </header>
 
-    <!-- ══════════════ ЛИЧНОЕ ДЕЛО ══════════════ -->
     <section id="bio">
         <div class="container">
             <div class="section-header reveal">
@@ -104,9 +99,9 @@
                         </div>
                     </div>
 
-                    <div class="info-item" style="margin-bottom: 1.5rem;">
+                    <div class="info-item info-item--spaced">
                         <label>Опыт работы</label>
-                        <span class="val" style="color: var(--gold);">Заместитель директора — Zaman Academy</span>
+                        <span class="val val--gold">Заместитель директора — Zaman Academy</span>
                         <p class="trust-sub">Курсы английского языка · Управление командой · Маркетинг</p>
                     </div>
 
@@ -122,7 +117,6 @@
         </div>
     </section>
 
-    <!-- ══════════════ АРСЕНАЛ ══════════════ -->
     <section id="arsenal">
         <div class="container">
             <div class="section-header reveal">
@@ -166,7 +160,6 @@
         </div>
     </section>
 
-    <!-- ══════════════ ЛАБОРАТОРИЯ ══════════════ -->
     <section id="projects">
         <div class="container">
             <div class="section-header reveal">
@@ -177,10 +170,146 @@
 
             <div class="projects-grid">
 
-                <!-- Azamat AI -->
-                <div class="project-card glass reveal">
-                    <div class="project-accent" style="background: linear-gradient(90deg, var(--cyan), var(--azure));">
+                <article class="project-card project-card--dist glass reveal">
+                    <div class="dist-glow"></div>
+                    <div class="dist-mesh">
+                        <div class="dist-row">
+                            <div class="dist-node">
+                                <span class="dist-ring"></span>
+                                <span class="dist-icon">⚡</span>
+                                <span class="dist-label">FastAPI</span>
+                            </div>
+                            <div class="dist-wire"><i class="dist-packet"></i><i class="dist-packet"></i></div>
+                            <div class="dist-node">
+                                <span class="dist-ring"></span>
+                                <span class="dist-icon">📨</span>
+                                <span class="dist-label">RabbitMQ</span>
+                            </div>
+                            <div class="dist-wire"><i class="dist-packet"></i><i class="dist-packet"></i></div>
+                            <div class="dist-node">
+                                <span class="dist-ring"></span>
+                                <span class="dist-icon">🤖</span>
+                                <span class="dist-label">Workers</span>
+                            </div>
+                            <div class="dist-wire"><i class="dist-packet"></i><i class="dist-packet"></i></div>
+                            <div class="dist-node">
+                                <span class="dist-ring"></span>
+                                <span class="dist-icon">🗄</span>
+                                <span class="dist-label">PostgreSQL</span>
+                            </div>
+                        </div>
+                        <div class="dist-branch">
+                            <div class="dist-wire dist-wire--v"><i class="dist-packet"></i></div>
+                            <div class="dist-node dist-node--cache">
+                                <span class="dist-ring"></span>
+                                <span class="dist-icon">⚙</span>
+                                <span class="dist-label">Redis</span>
+                            </div>
+                        </div>
                     </div>
+                    <div class="dist-stats">
+                        <div class="dist-stat">
+                            <span class="dist-stat-val" data-target="2400">0</span>
+                            <span class="dist-stat-key">webhooks/мин</span>
+                        </div>
+                        <div class="dist-stat">
+                            <span class="dist-stat-val" data-target="99">0</span>
+                            <span class="dist-stat-key">uptime %</span>
+                        </div>
+                        <div class="dist-stat">
+                            <span class="dist-stat-val" data-target="45">0</span>
+                            <span class="dist-stat-key">ms latency</span>
+                        </div>
+                    </div>
+                    <div class="dist-head">
+                        <span class="dist-badge">BACKEND · PRODUCTION</span>
+                        <h3 class="dist-title">Azamat &amp; Jarvis</h3>
+                        <p class="dist-sub">Распределённые AI-системы для автоматизации B2B-процессов</p>
+                    </div>
+                    <ul class="dist-points">
+                        <li><strong>ASGI</strong> — asyncio-обработка пиковых нагрузок в реальном времени</li>
+                        <li><strong>Очереди</strong> — входящие запросы не теряются при сбоях LLM и Meta API</li>
+                        <li><strong>ACID + Redis</strong> — транзакции лидов и мгновенный кэш диалогов</li>
+                        <li><strong>SOLID</strong> — микросервисы через DI, Repository и Factory</li>
+                    </ul>
+                    <div class="tag-list">
+                        <span class="tag dist-tag">Python</span>
+                        <span class="tag dist-tag">FastAPI</span>
+                        <span class="tag dist-tag">PostgreSQL</span>
+                        <span class="tag dist-tag">Redis</span>
+                        <span class="tag dist-tag">RabbitMQ</span>
+                        <span class="tag dist-tag">Docker</span>
+                    </div>
+                </article>
+
+                <article class="project-card project-card--ml glass reveal">
+                    <div class="ml-aura"></div>
+                    <div class="ml-visual">
+                        <div class="ml-orbit">
+                            <div class="ml-core">
+                                <span class="ml-core-ring"></span>
+                                <span class="ml-core-ring ml-core-ring--2"></span>
+                                <span class="ml-core-dot"></span>
+                            </div>
+                            <div class="ml-sat ml-sat--jarvis">
+                                <span class="ml-sat-icon">🎙</span>
+                                <span class="ml-sat-name">Jarvis</span>
+                            </div>
+                            <div class="ml-sat ml-sat--azamat">
+                                <span class="ml-sat-icon">💬</span>
+                                <span class="ml-sat-name">Azamat</span>
+                            </div>
+                        </div>
+                        <div class="ml-rag">
+                            <span class="ml-step">Query</span>
+                            <span class="ml-step">Embed</span>
+                            <span class="ml-step">Retrieve</span>
+                            <span class="ml-step">Generate</span>
+                            <span class="ml-rag-beam"></span>
+                        </div>
+                        <div class="ml-console">
+                            <span class="ml-console-line">wake_word → intent classified</span>
+                            <span class="ml-console-line ml-console-line--stream"></span>
+                        </div>
+                    </div>
+                    <div class="ml-metrics">
+                        <div class="ml-metric">
+                            <div class="ml-bar"><i style="--h:72%"></i></div>
+                            <span>VRAM</span>
+                        </div>
+                        <div class="ml-metric">
+                            <div class="ml-bar"><i style="--h:58%"></i></div>
+                            <span>RAG hit</span>
+                        </div>
+                        <div class="ml-metric">
+                            <div class="ml-bar"><i style="--h:91%"></i></div>
+                            <span>GPU util</span>
+                        </div>
+                    </div>
+                    <div class="ml-head">
+                        <span class="ml-badge">ML · ECOSYSTEM</span>
+                        <h3 class="ml-title">Экосистема автономных AI-ассистентов</h3>
+                        <p class="ml-sub">Jarvis — голосовой ассистент с low-latency · Azamat — AI-менеджер для B2B-каналов</p>
+                    </div>
+                    <ul class="ml-points">
+                        <li><strong>Fine-tuning</strong> — датасеты, wake-word, удержание контекста диалога</li>
+                        <li><strong>RAG</strong> — кастомный семантический поиск без тяжёлых фреймворков</li>
+                        <li><strong>FastAPI</strong> — стриминг токенов LLM в реальном времени</li>
+                        <li><strong>PyTorch</strong> — локальный запуск LLM с оптимизацией VRAM</li>
+                        <li><strong>Docker + Git</strong> — контейнеризация ML-сервисов, деплой на Linux</li>
+                    </ul>
+                    <div class="tag-list">
+                        <span class="tag ml-tag">Python</span>
+                        <span class="tag ml-tag">FastAPI</span>
+                        <span class="tag ml-tag">PyTorch</span>
+                        <span class="tag ml-tag">NumPy</span>
+                        <span class="tag ml-tag">Docker</span>
+                        <span class="tag ml-tag">Linux</span>
+                    </div>
+                </article>
+
+                <div class="project-card glass reveal">
+                    <div class="project-accent project-accent--cyan"></div>
                     <div class="project-title">Azamat AI Sales Agent</div>
                     <div class="project-flow">
                         <div class="flow-item flow-problem">
@@ -198,17 +327,15 @@
                             Снижение затрат на продажи до 70%, ответ клиенту — мгновенный, конверсия растёт.
                         </div>
                     </div>
-                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <div class="tag-list">
                         <span class="tag">OpenAI</span>
                         <span class="tag">Green-API</span>
                         <span class="tag">Python</span>
                     </div>
                 </div>
 
-                <!-- Jarvis -->
                 <div class="project-card glass reveal">
-                    <div class="project-accent"
-                        style="background: linear-gradient(90deg, var(--orchid), var(--magenta));"></div>
+                    <div class="project-accent project-accent--orchid"></div>
                     <div class="project-title">Jarvis Voice System</div>
                     <div class="project-flow">
                         <div class="flow-item flow-problem">
@@ -224,16 +351,15 @@
                             Отклик &lt;200ms, работает оффлайн, полный контроль над данными.
                         </div>
                     </div>
-                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <div class="tag-list">
                         <span class="tag orchid-tag">ONNX</span>
                         <span class="tag orchid-tag">Groq</span>
                         <span class="tag orchid-tag">ElevenLabs</span>
                     </div>
                 </div>
 
-                <!-- Zaman Track -->
                 <div class="project-card glass reveal">
-                    <div class="project-accent" style="background: linear-gradient(90deg, var(--gold), #ff9500);"></div>
+                    <div class="project-accent project-accent--gold"></div>
                     <div class="project-title">Zaman Track</div>
                     <div class="project-flow">
                         <div class="flow-item flow-problem">
@@ -249,7 +375,7 @@
                             Растущая аудитория, брендинг и монетизация для независимых артистов СНГ.
                         </div>
                     </div>
-                    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <div class="tag-list">
                         <span class="tag gold-tag">Marketing</span>
                         <span class="tag gold-tag">Branding</span>
                         <span class="tag gold-tag">Creative</span>
@@ -260,7 +386,6 @@
         </div>
     </section>
 
-    <!-- ══════════════ TRUST SIGNALS ══════════════ -->
     <section id="trust">
         <div class="container">
             <div class="section-header reveal">
@@ -297,7 +422,6 @@
         </div>
     </section>
 
-    <!-- ══════════════ КАНАЛ СВЯЗИ ══════════════ -->
     <section id="contacts">
         <div class="container">
             <div class="section-header reveal">
@@ -306,14 +430,14 @@
                 <div class="sh-badge">CONTACT</div>
             </div>
             <div class="contacts-grid">
-                <a href="https://t.me/as1anbekow" target="_blank" class="contact-btn tg glass reveal">
+                <a href="https://t.me/as1anbekow" target="_blank" rel="noopener noreferrer" class="contact-btn tg glass reveal">
                     <span class="cb-icon">✈️</span>
                     <div>
                         <div class="cb-label">Telegram</div>
                         <div class="cb-value">@as1anbekow</div>
                     </div>
                 </a>
-                <a href="https://wa.me/996552909107" target="_blank" class="contact-btn wa glass reveal">
+                <a href="https://wa.me/996552909107" target="_blank" rel="noopener noreferrer" class="contact-btn wa glass reveal">
                     <span class="cb-icon">💬</span>
                     <div>
                         <div class="cb-label">WhatsApp</div>
@@ -327,7 +451,7 @@
                         <div class="cb-value">+996 558 909 104</div>
                     </div>
                 </a>
-                <a href="https://github.com/baelaslanbekow" target="_blank" class="contact-btn gh glass reveal">
+                <a href="https://github.com/baelaslanbekow" target="_blank" rel="noopener noreferrer" class="contact-btn gh glass reveal">
                     <span class="cb-icon">⚡</span>
                     <div>
                         <div class="cb-label">GitHub</div>
