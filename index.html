@@ -419,19 +419,20 @@
                     <div class="project-flow">
                         <div class="flow-item flow-problem">
                             <div class="flow-label">🎯 Проблема</div>
-                            Меня не устраивало, что голосовые ассистенты зависят от облака, имеют высокую задержку и не работают без интернета.
+                            Меня не устраивало, что голосовые ассистенты отправляют весь пайплайн в облако — высокая задержка на активацию и нет контроля над аудиоданными.
                         </div>
                         <div class="flow-item flow-solution">
                             <div class="flow-label">⚙️ Решение</div>
-                            Я разработал полностью локальную нейросеть (ONNX) с Wake Word Detection, интеграцией Groq и ElevenLabs.
+                            Я построил гибридную архитектуру: Wake Word и распознавание речи — локально на ONNX, а Groq и ElevenLabs подключаются только онлайн для сложных ответов и синтеза голоса.
                         </div>
                         <div class="flow-item flow-result">
                             <div class="flow-label">✅ Результат</div>
-                            Моя система даёт отклик &lt;200ms, работает оффлайн и даёт полный контроль над данными.
+                            Локальная активация &lt;200ms, умная маршрутизация запросов и естественный голос — без отправки всего аудио в облако.
                         </div>
                     </div>
                     <div class="tag-list">
                         <span class="tag orchid-tag">ONNX</span>
+                        <span class="tag orchid-tag">Wake Word</span>
                         <span class="tag orchid-tag">Groq</span>
                         <span class="tag orchid-tag">ElevenLabs</span>
                     </div>
