@@ -43,8 +43,8 @@ const CONFIG = {
         pauseBeforeNext: 400,
     },
     scrollReveal: {
-        threshold: 0.1,
-        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.05,
+        rootMargin: '0px 0px 0px 0px',
     },
     parallax: {
         depthStep: 5,
@@ -185,17 +185,32 @@ const Typewriter = {
 };
 
 const ScrollReveal = {
+    reveal(el, obs) {
+        if (el.classList.contains('visible')) return;
+        el.classList.add('visible');
+        if (obs) obs.unobserve(el);
+    },
+    inViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return rect.top < window.innerHeight * 0.94 && rect.bottom > 0;
+    },
     init() {
         const items = document.querySelectorAll(CONFIG.selectors.reveal);
         if (!items.length) return;
         const obs = new IntersectionObserver((entries) => {
             entries.forEach((e) => {
-                if (!e.isIntersecting) return;
-                e.target.classList.add('visible');
-                obs.unobserve(e.target);
+                if (e.isIntersecting) this.reveal(e.target, obs);
             });
         }, CONFIG.scrollReveal);
-        items.forEach((el) => obs.observe(el));
+        items.forEach((el) => {
+            obs.observe(el);
+            if (this.inViewport(el)) this.reveal(el, obs);
+        });
+        window.addEventListener('load', () => {
+            items.forEach((el) => {
+                if (this.inViewport(el)) this.reveal(el, obs);
+            });
+        }, { once: true });
     },
 };
 
@@ -262,14 +277,25 @@ const DistProject = {
         if (!card) return;
         const stats = card.querySelectorAll(CONFIG.selectors.distStat);
         if (!stats.length) return;
+        const runStats = () => stats.forEach((el) => this.count(el));
         const obs = new IntersectionObserver((entries) => {
             entries.forEach((e) => {
                 if (!e.isIntersecting) return;
-                stats.forEach((el) => this.count(el));
+                runStats();
                 obs.disconnect();
             });
-        }, { threshold: 0.4 });
+        }, { threshold: 0.15, rootMargin: '0px 0px 10% 0px' });
         obs.observe(card);
+        requestAnimationFrame(() => {
+            const rect = card.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) runStats();
+        });
+        setTimeout(() => {
+            stats.forEach((el) => {
+                if (el.dataset.done) return;
+                el.textContent = (+el.dataset.target).toLocaleString('ru-RU');
+            });
+        }, 2200);
         if (!utils.canUseFinePointer()) return;
         const move = utils.rafThrottle((e) => {
             const r = card.getBoundingClientRect();
@@ -281,6 +307,8 @@ const DistProject = {
         card.addEventListener('mousemove', move, { passive: true });
     },
     count(el) {
+        if (el.dataset.done) return;
+        el.dataset.done = '1';
         const target = +el.dataset.target;
         const dur = 1400;
         const t0 = performance.now();
