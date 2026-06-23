@@ -1497,6 +1497,11 @@ section { padding: 6rem 0; }
 }
 
 .reveal {
+    opacity: 1;
+    transform: none;
+}
+
+html.js .reveal:not(.visible) {
     opacity: 0;
     transform: translateY(40px) scale(0.95);
     transition: opacity 0.8s var(--ease-smooth), transform 0.8s var(--ease-spring);

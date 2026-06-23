@@ -403,4 +403,5 @@ const App = {
     },
 };
 
+document.documentElement.classList.add('js');
 document.addEventListener('DOMContentLoaded', () => App.init());

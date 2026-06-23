@@ -4,6 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            var repo = '/portfolio-2026';
+            if (location.hostname.endsWith('github.io') && location.pathname.indexOf(repo) === 0) {
+                var base = document.createElement('base');
+                base.href = repo + '/';
+                document.head.appendChild(base);
+            }
+        })();
+    </script>
     <title>Асланбеков Баэл | AI Architect & Software Engineer</title>
     <meta name="description"
         content="Я — Асланбеков Баэл Асланбекович, AI Architect и Software Engineer. Я создал Jarvis и Azamat AI.">
@@ -12,7 +22,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=5">
 </head>
 
 <body>
@@ -248,15 +258,15 @@
                     </div>
                     <div class="dist-stats">
                         <div class="dist-stat">
-                            <span class="dist-stat-val" data-target="2400">0</span>
+                            <span class="dist-stat-val" data-target="2400">2400</span>
                             <span class="dist-stat-key">webhooks/мин</span>
                         </div>
                         <div class="dist-stat">
-                            <span class="dist-stat-val" data-target="99">0</span>
+                            <span class="dist-stat-val" data-target="99">99</span>
                             <span class="dist-stat-key">uptime %</span>
                         </div>
                         <div class="dist-stat">
-                            <span class="dist-stat-val" data-target="45">0</span>
+                            <span class="dist-stat-val" data-target="45">45</span>
                             <span class="dist-stat-key">ms latency</span>
                         </div>
                     </div>
@@ -562,7 +572,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=5"></script>
 </body>
 
 </html>
