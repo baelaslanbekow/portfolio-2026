@@ -15,21 +15,18 @@ const CONFIG = {
         anchorLinks: 'a[href^="#"]',
     },
     boot: {
-        initialDelay: 400,
-        lineDelay: 80,
-        defaultPause: 500,
-        successPause: 350,
-        fadeOutDelay: 900,
-        hideDelay: 800,
+        storageKey: 'bael_boot_seen',
+        initialDelay: 120,
+        lineDelay: 35,
+        defaultPause: 140,
+        successPause: 90,
+        fadeOutDelay: 280,
+        hideDelay: 180,
         lines: [
-            { text: '> Запуск BAEL_OS v3.0 [LUXE]...', type: '' },
-            { text: '> Загрузка нейронных модулей...', type: '' },
+            { text: '> Запуск BAEL_OS v3.0...', type: '' },
             { text: '  [kernel]   neural_core.onnx        ', type: 'success', append: 'OK' },
-            { text: '  [module]   jarvis_voice_engine      ', type: 'success', append: 'OK' },
             { text: '  [agent]    azamat_sales_agent       ', type: 'success', append: 'OK' },
-            { text: '> Проверка личности: Асланбеков Б.А.', type: '' },
             { text: '> Статус системы: ONLINE', type: 'success' },
-            { text: '> Добро пожаловать, сэр.', type: 'success' },
         ],
     },
     typewriter: {
@@ -50,8 +47,7 @@ const CONFIG = {
         rootMargin: '0px 0px -40px 0px',
     },
     parallax: {
-        depthStep: 6,
-        throttleMs: 16,
+        depthStep: 5,
     },
     magnetic: {
         strength: 0.3,
@@ -68,15 +64,24 @@ const utils = {
     delay(ms) {
         return new Promise((resolve) => setTimeout(resolve, ms));
     },
-    throttle(fn, ms) {
-        let t = 0;
+    rafThrottle(fn) {
+        let scheduled = false;
+        let lastArgs;
         return (...args) => {
-            const now = Date.now();
-            if (now - t >= ms) {
-                t = now;
-                fn(...args);
-            }
+            lastArgs = args;
+            if (scheduled) return;
+            scheduled = true;
+            requestAnimationFrame(() => {
+                scheduled = false;
+                fn(...lastArgs);
+            });
         };
+    },
+    prefersReducedMotion() {
+        return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    },
+    canUseFinePointer() {
+        return window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     },
     $(sel, root = document) {
         return root.querySelector(sel);
@@ -90,17 +95,41 @@ const utils = {
 };
 
 const BootSequence = {
+    shouldRun() {
+        if (utils.prefersReducedMotion()) return false;
+        try {
+            return !sessionStorage.getItem(CONFIG.boot.storageKey);
+        } catch {
+            return false;
+        }
+    },
+    skip(overlay) {
+        if (!overlay) return;
+        overlay.style.display = 'none';
+        overlay.style.pointerEvents = 'none';
+        document.body.style.overflow = '';
+    },
     async run() {
         const overlay = utils.$(CONFIG.selectors.terminalOverlay);
         const container = utils.$(CONFIG.selectors.terminalLines);
-        if (!overlay || !container) return;
+
+        App.startAnimations();
+
+        if (!overlay || !container || !this.shouldRun()) {
+            this.skip(overlay);
+            return;
+        }
+
+        try {
+            sessionStorage.setItem(CONFIG.boot.storageKey, '1');
+        } catch {}
+
         document.body.style.overflow = 'hidden';
         await utils.delay(CONFIG.boot.initialDelay);
         for (const line of CONFIG.boot.lines) {
             await this.renderLine(container, line);
         }
         await this.hide(overlay);
-        App.startAnimations();
     },
     async renderLine(container, line) {
         const cls = ['t-line', line.type].filter(Boolean).join(' ');
@@ -172,32 +201,35 @@ const ScrollReveal = {
 
 const Parallax = {
     init() {
+        if (!utils.canUseFinePointer() || utils.prefersReducedMotion()) return;
         if (!utils.$(CONFIG.selectors.hero)) return;
         const targets = [...document.querySelectorAll(CONFIG.selectors.parallaxTargets)];
         if (!targets.length) return;
-        document.addEventListener('mousemove', utils.throttle((e) => {
+        document.addEventListener('mousemove', utils.rafThrottle((e) => {
             const cx = window.innerWidth / 2;
             const cy = window.innerHeight / 2;
             const dx = (e.clientX - cx) / cx;
             const dy = (e.clientY - cy) / cy;
             targets.forEach((el, i) => {
                 const d = (i + 1) * CONFIG.parallax.depthStep;
-                el.style.transform = `translate(${dx * d}px, ${dy * d}px)`;
+                el.style.transform = `translate3d(${dx * d}px, ${dy * d}px, 0)`;
             });
-        }, CONFIG.parallax.throttleMs));
+        }), { passive: true });
     },
 };
 
 const MagneticButtons = {
     init() {
+        if (!utils.canUseFinePointer() || utils.prefersReducedMotion()) return;
         const { strength, scale } = CONFIG.magnetic;
         document.querySelectorAll(CONFIG.selectors.magneticButtons).forEach((btn) => {
-            btn.addEventListener('mousemove', (e) => {
+            const move = utils.rafThrottle((e) => {
                 const r = btn.getBoundingClientRect();
                 const x = e.clientX - r.left - r.width / 2;
                 const y = e.clientY - r.top - r.height / 2;
-                btn.style.transform = `translate(${x * strength}px, ${y * strength}px) scale(${scale})`;
+                btn.style.transform = `translate3d(${x * strength}px, ${y * strength}px, 0) scale(${scale})`;
             });
+            btn.addEventListener('mousemove', move, { passive: true });
             btn.addEventListener('mouseleave', () => {
                 btn.style.transform = '';
             });
@@ -207,14 +239,16 @@ const MagneticButtons = {
 
 const CardTilt = {
     init() {
+        if (!utils.canUseFinePointer() || utils.prefersReducedMotion()) return;
         const { perspective, maxRotation, hoverScale } = CONFIG.tilt;
         document.querySelectorAll(CONFIG.selectors.tiltCards).forEach((card) => {
-            card.addEventListener('mousemove', (e) => {
+            const move = utils.rafThrottle((e) => {
                 const r = card.getBoundingClientRect();
                 const ry = ((e.clientX - r.left) / r.width - 0.5) * maxRotation;
                 const rx = ((e.clientY - r.top) / r.height - 0.5) * -maxRotation;
                 card.style.transform = `perspective(${perspective}px) rotateX(${rx}deg) rotateY(${ry}deg) scale(${hoverScale})`;
             });
+            card.addEventListener('mousemove', move, { passive: true });
             card.addEventListener('mouseleave', () => {
                 card.style.transform = '';
             });
@@ -236,13 +270,15 @@ const DistProject = {
             });
         }, { threshold: 0.4 });
         obs.observe(card);
-        card.addEventListener('mousemove', (e) => {
+        if (!utils.canUseFinePointer()) return;
+        const move = utils.rafThrottle((e) => {
             const r = card.getBoundingClientRect();
             const x = ((e.clientX - r.left) / r.width) * 100;
             const y = ((e.clientY - r.top) / r.height) * 100;
             card.style.setProperty('--mx', `${x}%`);
             card.style.setProperty('--my', `${y}%`);
         });
+        card.addEventListener('mousemove', move, { passive: true });
     },
     count(el) {
         const target = +el.dataset.target;
@@ -278,11 +314,13 @@ const MlProject = {
             });
         }, { threshold: 0.35 });
         obs.observe(card);
-        card.addEventListener('mousemove', (e) => {
+        if (!utils.canUseFinePointer()) return;
+        const move = utils.rafThrottle((e) => {
             const r = card.getBoundingClientRect();
             card.style.setProperty('--mx', `${((e.clientX - r.left) / r.width) * 100}%`);
             card.style.setProperty('--my', `${((e.clientY - r.top) / r.height) * 100}%`);
         });
+        card.addEventListener('mousemove', move, { passive: true });
     },
     type(el) {
         const text = this.tokens[this.idx];
@@ -317,18 +355,23 @@ const SmoothScroll = {
 };
 
 const App = {
+    started: false,
     init() {
         BootSequence.run();
     },
     startAnimations() {
+        if (this.started) return;
+        this.started = true;
         ScrollReveal.init();
-        Parallax.init();
-        MagneticButtons.init();
-        CardTilt.init();
         SmoothScroll.init();
         DistProject.init();
         MlProject.init();
         Typewriter.init();
+        requestAnimationFrame(() => {
+            Parallax.init();
+            MagneticButtons.init();
+            CardTilt.init();
+        });
     },
 };
 
