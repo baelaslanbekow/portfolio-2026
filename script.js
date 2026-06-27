@@ -13,6 +13,7 @@ const CONFIG = {
         mlCard: '.project-card--ml',
         mlStream: '.ml-console-line--stream',
         anchorLinks: 'a[href^="#"]',
+        profileCarousel: '.profile-carousel',
     },
     boot: {
         storageKey: 'bael_boot_seen',
@@ -369,6 +370,28 @@ const MlProject = {
     },
 };
 
+const ProfileCarousel = {
+    current: 0,
+    autoplayMs: 2000,
+
+    init() {
+        const root = utils.$(CONFIG.selectors.profileCarousel);
+        if (!root) return;
+
+        this.slides = [...root.querySelectorAll('.profile-carousel__slide')];
+        if (this.slides.length < 2) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        setInterval(() => this.next(), this.autoplayMs);
+    },
+
+    next() {
+        this.slides[this.current].classList.remove('is-active');
+        this.current = (this.current + 1) % this.slides.length;
+        this.slides[this.current].classList.add('is-active');
+    },
+};
+
 const SmoothScroll = {
     init() {
         document.querySelectorAll(CONFIG.selectors.anchorLinks).forEach((link) => {
@@ -392,6 +415,7 @@ const App = {
         this.started = true;
         ScrollReveal.init();
         SmoothScroll.init();
+        ProfileCarousel.init();
         DistProject.init();
         MlProject.init();
         Typewriter.init();

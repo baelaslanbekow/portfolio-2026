@@ -22,12 +22,13 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="style.css?v=5">
+    <link rel="stylesheet" href="style.css?v=9">
 </head>
 
 <body>
 
     <div class="bg-scene"></div>
+    <div class="spectrum-glow" aria-hidden="true"></div>
     <div class="grain-overlay"></div>
     <div class="grid-overlay"></div>
     <div class="scanline"></div>
@@ -75,7 +76,22 @@
                 <div class="bio-sidebar glass reveal">
                     <div class="profile-card">
                         <div class="profile-card__frame">
-                            <img src="assets/profile.jpg" alt="Асланбеков Баэл Асланбекович" class="profile-card__img" width="160" height="160" loading="lazy" decoding="async">
+                            <div class="profile-carousel" aria-roledescription="carousel" aria-label="Фотографии">
+                                <div class="profile-carousel__track">
+                                    <div class="profile-carousel__slide is-active">
+                                        <img src="assets/carousel/01-city.jpg" alt="Асланбеков Баэл — городской портрет" class="profile-carousel__img" width="160" height="160" loading="eager" decoding="async">
+                                    </div>
+                                    <div class="profile-carousel__slide">
+                                        <img src="assets/carousel/02-code.jpg" alt="Асланбеков Баэл за работой" class="profile-carousel__img" width="160" height="160" loading="lazy" decoding="async">
+                                    </div>
+                                    <div class="profile-carousel__slide">
+                                        <img src="assets/carousel/03-photo.jpg" alt="Асланбеков Баэл" class="profile-carousel__img" width="160" height="160" loading="lazy" decoding="async">
+                                    </div>
+                                    <div class="profile-carousel__slide">
+                                        <img src="assets/carousel/05-profile.jpg" alt="Асланбеков Баэл Асланбекович" class="profile-carousel__img" width="160" height="160" loading="lazy" decoding="async">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="profile-card__name">Баэл Асланбеков</div>
                     </div>
@@ -607,7 +623,7 @@
         </div>
     </footer>
 
-    <script src="script.js?v=5"></script>
+    <script src="script.js?v=9"></script>
 </body>
 
 </html>
