@@ -24,7 +24,7 @@ const CONFIG = {
         fadeOutDelay: 280,
         hideDelay: 180,
         lines: [
-            { text: '> Запуск BAEL_OS v3.0...', type: '' },
+            { text: '> Запуск BAEL_OS v2.0...', type: '' },
             { text: '  [kernel]   neural_core.onnx        ', type: 'success', append: 'OK' },
             { text: '  [agent]    azamat_sales_agent       ', type: 'success', append: 'OK' },
             { text: '> Статус системы: ONLINE', type: 'success' },
@@ -36,7 +36,7 @@ const CONFIG = {
             'Azamat Sales Agent: status ONLINE.',
             'Running neural inference... OK.',
             'Scanning project portfolio...',
-            'Bael_OS ready. All systems nominal.',
+            'Bael_OS v2.0 ready. All systems nominal.',
         ],
         typingSpeed: 60,
         deletingSpeed: 35,

@@ -22,13 +22,16 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="style.css?v=9">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.3.1/dist/fonts/geist-sans/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/thin/style.css">
+    <link rel="stylesheet" href="style.css?v=11">
 </head>
 
 <body>
 
     <div class="bg-scene"></div>
-    <div class="spectrum-glow" aria-hidden="true"></div>
+
     <div class="grain-overlay"></div>
     <div class="grid-overlay"></div>
     <div class="scanline"></div>
@@ -52,11 +55,12 @@
             </p>
 
             <div class="hero-cta">
-                <a href="#projects" class="btn-primary">↓ Мои проекты</a>
-                <a href="#contacts" class="btn-secondary">Связаться →</a>
+                <a href="#projects" class="btn-primary"><i class="ph-thin ph-arrow-down cyber-icon" aria-hidden="true"></i> Мои проекты</a>
+                <a href="#contacts" class="btn-secondary">Связаться <i class="ph-thin ph-arrow-right cyber-icon" aria-hidden="true"></i></a>
             </div>
 
             <div class="ai-terminal-bar">
+                <i class="ph-thin ph-terminal cyber-icon cyber-icon--terminal" aria-hidden="true"></i>
                 <span class="prompt">jarvis@bael-os:~$</span>
                 <span id="terminal-text"></span>
                 <span class="cursor"></span>
@@ -97,11 +101,11 @@
                     </div>
                     <div class="bio-id">ID · 15122007-BTK · KG</div>
                     <div class="qual-tags">
-                        <span class="qual-tag cyan">⚡ Team Leadership</span>
-                        <span class="qual-tag gold">★ Аналитическое мышление</span>
-                        <span class="qual-tag orchid">◈ Creative Problem Solving</span>
-                        <span class="qual-tag cyan">✦ Быстрое обучение</span>
-                        <span class="qual-tag gold">⬡ Коммуникабельность</span>
+                        <span class="qual-tag"><i class="ph-thin ph-users-three cyber-icon" aria-hidden="true"></i> Team Leadership</span>
+                        <span class="qual-tag"><i class="ph-thin ph-brain cyber-icon" aria-hidden="true"></i> Аналитическое мышление</span>
+                        <span class="qual-tag"><i class="ph-thin ph-lightbulb-filament cyber-icon" aria-hidden="true"></i> Creative Problem Solving</span>
+                        <span class="qual-tag"><i class="ph-thin ph-lightning cyber-icon" aria-hidden="true"></i> Быстрое обучение</span>
+                        <span class="qual-tag"><i class="ph-thin ph-chats cyber-icon" aria-hidden="true"></i> Коммуникабельность</span>
                     </div>
                 </div>
 
@@ -165,32 +169,32 @@
 
             <div class="skills-grid">
                 <div class="skill-card glass reveal">
-                    <div class="skill-icon">🐍</div>
+                    <i class="ph-thin ph-code cyber-icon cyber-icon--skill" aria-hidden="true"></i>
                     <div class="skill-name">Python</div>
                     <div class="skill-desc">Я создаю AI-агентов, автоматизацию, нейросети и бэкенд-скрипты</div>
                 </div>
                 <div class="skill-card glass reveal">
-                    <div class="skill-icon">💙</div>
+                    <i class="ph-thin ph-device-mobile cyber-icon cyber-icon--skill" aria-hidden="true"></i>
                     <div class="skill-name">Flutter / Dart</div>
                     <div class="skill-desc">Я разрабатываю кросс-платформенные мобильные приложения для iOS и Android</div>
                 </div>
                 <div class="skill-card glass reveal">
-                    <div class="skill-icon">⚡</div>
+                    <i class="ph-thin ph-file-js cyber-icon cyber-icon--skill" aria-hidden="true"></i>
                     <div class="skill-name">JavaScript</div>
                     <div class="skill-desc">Я строю веб-интерфейсы и интерактивные приложения на Vanilla JS</div>
                 </div>
                 <div class="skill-card glass reveal">
-                    <div class="skill-icon">☕</div>
+                    <i class="ph-thin ph-coffee cyber-icon cyber-icon--skill" aria-hidden="true"></i>
                     <div class="skill-name">Java</div>
                     <div class="skill-desc">Я пишу на Java: ООП и Android-разработка</div>
                 </div>
                 <div class="skill-card glass reveal">
-                    <div class="skill-icon">🔐</div>
+                    <i class="ph-thin ph-shield-checkered cyber-icon cyber-icon--skill" aria-hidden="true"></i>
                     <div class="skill-name">InfoSec</div>
                     <div class="skill-desc">Я работаю с сетевыми протоколами, безопасностью, OSPF и Cisco</div>
                 </div>
                 <div class="skill-card glass reveal">
-                    <div class="skill-icon">📈</div>
+                    <i class="ph-thin ph-chart-line-up cyber-icon cyber-icon--skill" aria-hidden="true"></i>
                     <div class="skill-name">Маркетинг</div>
                     <div class="skill-desc">Я веду SMM, продуктовый маркетинг, продажи и управление курсами</div>
                 </div>
@@ -213,15 +217,15 @@
                     <div class="project-title">ZamanAI — AGI-платформа</div>
                     <div class="project-flow">
                         <div class="flow-item flow-problem">
-                            <div class="flow-label">🎯 Проблема</div>
+                            <div class="flow-label"><i class="ph-thin ph-warning-circle cyber-icon" aria-hidden="true"></i> Проблема</div>
                             Я видел, что для сложных задач нужен не просто быстрый чат, а прозрачный AGI-цикл с памятью и поиском — в одном веб-интерфейсе.
                         </div>
                         <div class="flow-item flow-solution">
-                            <div class="flow-label">⚙️ Решение</div>
+                            <div class="flow-label"><i class="ph-thin ph-cpu cyber-icon" aria-hidden="true"></i> Решение</div>
                             Я создал ZamanAI с двумя режимами: быстрый LLM через Groq и полный когнитивный пайплайн Jarvis — понимание, веб-поиск, дебаты, рефлексия, SQLite-память. FastAPI + SSE-стриминг этапов мышления в реальном времени.
                         </div>
                         <div class="flow-item flow-result">
-                            <div class="flow-label">✅ Результат</div>
+                            <div class="flow-label"><i class="ph-thin ph-check-circle cyber-icon" aria-hidden="true"></i> Результат</div>
                             Я задеплоил продакшен-стек: GitHub Pages + Render, live-чат с переключением LLM/AGI и видимым процессом размышления ассистента.
                         </div>
                     </div>
@@ -233,8 +237,8 @@
                         <span class="tag">Vanilla JS</span>
                     </div>
                     <div class="project-actions">
-                        <a href="https://github.com/baelaslanbekow/zamanai" target="_blank" rel="noopener noreferrer" class="btn-secondary">GitHub →</a>
-                        <a href="https://baelaslanbekow.github.io/zamanai/" target="_blank" rel="noopener noreferrer" class="btn-primary">Live Demo →</a>
+                        <a href="https://github.com/baelaslanbekow/zamanai" target="_blank" rel="noopener noreferrer" class="btn-secondary"><i class="ph-thin ph-github-logo cyber-icon" aria-hidden="true"></i> GitHub <i class="ph-thin ph-arrow-square-out cyber-icon" aria-hidden="true"></i></a>
+                        <a href="https://baelaslanbekow.github.io/zamanai/" target="_blank" rel="noopener noreferrer" class="btn-primary">Live Demo <i class="ph-thin ph-arrow-square-out cyber-icon" aria-hidden="true"></i></a>
                     </div>
                 </div>
 
@@ -243,15 +247,15 @@
                     <div class="project-title">Марлис — Kyrgyz Voice Assistant</div>
                     <div class="project-flow">
                         <div class="flow-item flow-problem">
-                            <div class="flow-label">🎯 Проблема</div>
+                            <div class="flow-label"><i class="ph-thin ph-warning-circle cyber-icon" aria-hidden="true"></i> Проблема</div>
                             Я видел, что нет голосового AI-ассистента, который понимает и отвечает на кыргызском языке.
                         </div>
                         <div class="flow-item flow-solution">
-                            <div class="flow-label">⚙️ Решение</div>
+                            <div class="flow-label"><i class="ph-thin ph-cpu cyber-icon" aria-hidden="true"></i> Решение</div>
                             Я создал full-stack PWA: Whisper STT + Llama 3.3 через Groq, FastAPI backend и историю диалогов.
                         </div>
                         <div class="flow-item flow-result">
-                            <div class="flow-label">✅ Результат</div>
+                            <div class="flow-label"><i class="ph-thin ph-check-circle cyber-icon" aria-hidden="true"></i> Результат</div>
                             Я запустил рабочий MVP с голосовым вводом, лимитами, Docker и деплоем на Render.
                         </div>
                     </div>
@@ -263,8 +267,8 @@
                         <span class="tag gold-tag">Docker</span>
                     </div>
                     <div class="project-actions">
-                        <a href="https://github.com/baelaslanbekow/kyrgyz-voice-assistant" target="_blank" rel="noopener noreferrer" class="btn-secondary">GitHub →</a>
-                        <a href="https://marlis-voice-assistant.onrender.com" target="_blank" rel="noopener noreferrer" class="btn-primary">Live Demo →</a>
+                        <a href="https://github.com/baelaslanbekow/kyrgyz-voice-assistant" target="_blank" rel="noopener noreferrer" class="btn-secondary"><i class="ph-thin ph-github-logo cyber-icon" aria-hidden="true"></i> GitHub <i class="ph-thin ph-arrow-square-out cyber-icon" aria-hidden="true"></i></a>
+                        <a href="https://marlis-voice-assistant.onrender.com" target="_blank" rel="noopener noreferrer" class="btn-primary">Live Demo <i class="ph-thin ph-arrow-square-out cyber-icon" aria-hidden="true"></i></a>
                     </div>
                 </div>
 
@@ -275,25 +279,25 @@
                         <div class="dist-row">
                             <div class="dist-node">
                                 <span class="dist-ring"></span>
-                                <span class="dist-icon">⚡</span>
+                                <span class="dist-icon"><i class="ph-thin ph-bolt cyber-icon" aria-hidden="true"></i></span>
                                 <span class="dist-label">FastAPI</span>
                             </div>
                             <div class="dist-wire"><i class="dist-packet"></i><i class="dist-packet"></i></div>
                             <div class="dist-node">
                                 <span class="dist-ring"></span>
-                                <span class="dist-icon">📨</span>
+                                <span class="dist-icon"><i class="ph-thin ph-queue cyber-icon" aria-hidden="true"></i></span>
                                 <span class="dist-label">RabbitMQ</span>
                             </div>
                             <div class="dist-wire"><i class="dist-packet"></i><i class="dist-packet"></i></div>
                             <div class="dist-node">
                                 <span class="dist-ring"></span>
-                                <span class="dist-icon">🤖</span>
+                                <span class="dist-icon"><i class="ph-thin ph-nut cyber-icon" aria-hidden="true"></i></span>
                                 <span class="dist-label">Workers</span>
                             </div>
                             <div class="dist-wire"><i class="dist-packet"></i><i class="dist-packet"></i></div>
                             <div class="dist-node">
                                 <span class="dist-ring"></span>
-                                <span class="dist-icon">🗄</span>
+                                <span class="dist-icon"><i class="ph-thin ph-database cyber-icon" aria-hidden="true"></i></span>
                                 <span class="dist-label">PostgreSQL</span>
                             </div>
                         </div>
@@ -301,7 +305,7 @@
                             <div class="dist-wire dist-wire--v"><i class="dist-packet"></i></div>
                             <div class="dist-node dist-node--cache">
                                 <span class="dist-ring"></span>
-                                <span class="dist-icon">⚙</span>
+                                <span class="dist-icon"><i class="ph-thin ph-hourglass-high cyber-icon" aria-hidden="true"></i></span>
                                 <span class="dist-label">Redis</span>
                             </div>
                         </div>
@@ -351,11 +355,11 @@
                                 <span class="ml-core-dot"></span>
                             </div>
                             <div class="ml-sat ml-sat--jarvis">
-                                <span class="ml-sat-icon">🎙</span>
+                                <span class="ml-sat-icon"><i class="ph-thin ph-microphone cyber-icon" aria-hidden="true"></i></span>
                                 <span class="ml-sat-name">Jarvis</span>
                             </div>
                             <div class="ml-sat ml-sat--azamat">
-                                <span class="ml-sat-icon">💬</span>
+                                <span class="ml-sat-icon"><i class="ph-thin ph-chats cyber-icon" aria-hidden="true"></i></span>
                                 <span class="ml-sat-name">Azamat</span>
                             </div>
                         </div>
@@ -412,17 +416,17 @@
                     <div class="project-title">Azamat AI Sales Agent</div>
                     <div class="project-flow">
                         <div class="flow-item flow-problem">
-                            <div class="flow-label">🎯 Проблема</div>
+                            <div class="flow-label"><i class="ph-thin ph-warning-circle cyber-icon" aria-hidden="true"></i> Проблема</div>
                             Я видел, как бизнес тратит десятки часов в месяц на ручные ответы в WhatsApp и теряет клиентов из-за
                             медленных реакций.
                         </div>
                         <div class="flow-item flow-solution">
-                            <div class="flow-label">⚙️ Решение</div>
+                            <div class="flow-label"><i class="ph-thin ph-cpu cyber-icon" aria-hidden="true"></i> Решение</div>
                             Я создал автономный AI-агент, который отвечает 24/7, ведёт сделки и закрывает продажи без участия
                             человека.
                         </div>
                         <div class="flow-item flow-result">
-                            <div class="flow-label">✅ Результат</div>
+                            <div class="flow-label"><i class="ph-thin ph-check-circle cyber-icon" aria-hidden="true"></i> Результат</div>
                             Я добился снижения затрат на продажи до 70%: ответ клиенту — мгновенный, конверсия растёт.
                         </div>
                     </div>
@@ -438,15 +442,15 @@
                     <div class="project-title">Jarvis Voice System</div>
                     <div class="project-flow">
                         <div class="flow-item flow-problem">
-                            <div class="flow-label">🎯 Проблема</div>
+                            <div class="flow-label"><i class="ph-thin ph-warning-circle cyber-icon" aria-hidden="true"></i> Проблема</div>
                             Меня не устраивало, что голосовые ассистенты отправляют весь пайплайн в облако — высокая задержка на активацию и нет контроля над аудиоданными.
                         </div>
                         <div class="flow-item flow-solution">
-                            <div class="flow-label">⚙️ Решение</div>
+                            <div class="flow-label"><i class="ph-thin ph-cpu cyber-icon" aria-hidden="true"></i> Решение</div>
                             Я построил гибридную архитектуру: Wake Word и распознавание речи — локально на ONNX, а Groq и ElevenLabs подключаются только онлайн для сложных ответов и синтеза голоса.
                         </div>
                         <div class="flow-item flow-result">
-                            <div class="flow-label">✅ Результат</div>
+                            <div class="flow-label"><i class="ph-thin ph-check-circle cyber-icon" aria-hidden="true"></i> Результат</div>
                             Локальная активация &lt;200ms, умная маршрутизация запросов и естественный голос — без отправки всего аудио в облако.
                         </div>
                     </div>
@@ -463,15 +467,15 @@
                     <div class="project-title">Zaman Track</div>
                     <div class="project-flow">
                         <div class="flow-item flow-problem">
-                            <div class="flow-label">🎯 Проблема</div>
+                            <div class="flow-label"><i class="ph-thin ph-warning-circle cyber-icon" aria-hidden="true"></i> Проблема</div>
                             Я видел, что СНГ-артисты не имеют доступа к качественной дистрибуции и профессиональному маркетингу.
                         </div>
                         <div class="flow-item flow-solution">
-                            <div class="flow-label">⚙️ Решение</div>
+                            <div class="flow-label"><i class="ph-thin ph-cpu cyber-icon" aria-hidden="true"></i> Решение</div>
                             Я запустил музыкальный лейбл с IT-инфраструктурой: AI-маркетинг, аналитика и дистрибуция.
                         </div>
                         <div class="flow-item flow-result">
-                            <div class="flow-label">✅ Результат</div>
+                            <div class="flow-label"><i class="ph-thin ph-check-circle cyber-icon" aria-hidden="true"></i> Результат</div>
                             Я помогаю артистам наращивать аудиторию, строить бренд и монетизировать творчество.
                         </div>
                     </div>
@@ -495,25 +499,25 @@
             </div>
             <div class="trust-grid">
                 <div class="trust-card glass reveal">
-                    <div class="trust-icon">🎓</div>
+                    <i class="ph-thin ph-graduation-cap cyber-icon cyber-icon--skill" aria-hidden="true"></i>
                     <div class="trust-label">Образование</div>
                     <div class="trust-value">Бишкекский технический колледж</div>
                     <div class="trust-sub">Я учился на Software Engineering</div>
                 </div>
                 <div class="trust-card glass reveal">
-                    <div class="trust-icon">🏢</div>
+                    <i class="ph-thin ph-buildings cyber-icon cyber-icon--skill" aria-hidden="true"></i>
                     <div class="trust-label">Опыт управления</div>
                     <div class="trust-value">Zaman Academy</div>
                     <div class="trust-sub">Я работал заместителем директора · English Courses</div>
                 </div>
                 <div class="trust-card glass reveal">
-                    <div class="trust-icon">🔒</div>
+                    <i class="ph-thin ph-shield-checkered cyber-icon cyber-icon--skill" aria-hidden="true"></i>
                     <div class="trust-label">Специализация</div>
                     <div class="trust-value">InfoSec & Networks</div>
                     <div class="trust-sub">Я специализируюсь на OSPF · Cisco · сетевых протоколах</div>
                 </div>
                 <div class="trust-card glass reveal">
-                    <div class="trust-icon">🤖</div>
+                    <i class="ph-thin ph-robot cyber-icon cyber-icon--skill" aria-hidden="true"></i>
                     <div class="trust-label">AI-Экспертиза</div>
                     <div class="trust-value">Applied AI Systems</div>
                     <div class="trust-sub">Я создаю продакшен-агентов · голосовые системы · автоматизацию</div>
@@ -531,87 +535,68 @@
             </div>
             <div class="contacts-grid">
                 <a href="mailto:baelaslanbekov4@gmail.com" class="contact-btn mail glass reveal">
-                    <span class="cb-icon cb-icon--svg" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 6h16v12H4V6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                            <path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </span>
+                    <span class="cb-icon" aria-hidden="true"><i class="ph-thin ph-envelope cyber-icon"></i></span>
                     <div class="cb-text">
                         <div class="cb-label">Gmail</div>
                         <div class="cb-value">baelaslanbekov4@gmail.com</div>
                     </div>
-                    <span class="cb-arrow" aria-hidden="true">→</span>
+                    <span class="cb-arrow" aria-hidden="true"><i class="ph-thin ph-arrow-square-out cyber-icon"></i></span>
                 </a>
                 <a href="https://t.me/as1anbekow" target="_blank" rel="noopener noreferrer" class="contact-btn tg glass reveal">
-                    <span class="cb-icon">✈️</span>
+                    <span class="cb-icon" aria-hidden="true"><i class="ph-thin ph-telegram-logo cyber-icon"></i></span>
                     <div class="cb-text">
                         <div class="cb-label">Telegram</div>
                         <div class="cb-value">@as1anbekow</div>
                     </div>
-                    <span class="cb-arrow" aria-hidden="true">→</span>
+                    <span class="cb-arrow" aria-hidden="true"><i class="ph-thin ph-arrow-square-out cyber-icon"></i></span>
                 </a>
                 <a href="https://wa.me/996552909107" target="_blank" rel="noopener noreferrer" class="contact-btn wa glass reveal">
-                    <span class="cb-icon">💬</span>
+                    <span class="cb-icon" aria-hidden="true"><i class="ph-thin ph-whatsapp-logo cyber-icon"></i></span>
                     <div class="cb-text">
                         <div class="cb-label">WhatsApp</div>
                         <div class="cb-value">+996 552 909 107</div>
                     </div>
-                    <span class="cb-arrow" aria-hidden="true">→</span>
+                    <span class="cb-arrow" aria-hidden="true"><i class="ph-thin ph-arrow-square-out cyber-icon"></i></span>
                 </a>
                 <a href="tel:+996558909104" class="contact-btn tel glass reveal">
-                    <span class="cb-icon">📞</span>
+                    <span class="cb-icon" aria-hidden="true"><i class="ph-thin ph-phone cyber-icon"></i></span>
                     <div class="cb-text">
                         <div class="cb-label">Позвонить</div>
                         <div class="cb-value">+996 558 909 104</div>
                     </div>
-                    <span class="cb-arrow" aria-hidden="true">→</span>
+                    <span class="cb-arrow" aria-hidden="true"><i class="ph-thin ph-arrow-square-out cyber-icon"></i></span>
                 </a>
                 <a href="https://github.com/baelaslanbekow" target="_blank" rel="noopener noreferrer" class="contact-btn gh glass reveal">
-                    <span class="cb-icon">⚡</span>
+                    <span class="cb-icon" aria-hidden="true"><i class="ph-thin ph-github-logo cyber-icon"></i></span>
                     <div class="cb-text">
                         <div class="cb-label">GitHub</div>
                         <div class="cb-value">baelaslanbekow</div>
                     </div>
-                    <span class="cb-arrow" aria-hidden="true">→</span>
+                    <span class="cb-arrow" aria-hidden="true"><i class="ph-thin ph-arrow-square-out cyber-icon"></i></span>
                 </a>
                 <a href="https://www.linkedin.com/in/%D0%B1%D0%B0%D1%8D%D0%BB-%D0%B0%D1%81%D0%BB%D0%B0%D0%BD%D0%B1%D0%B5%D0%BA%D0%BE%D0%B2-933300419/" target="_blank" rel="noopener noreferrer" class="contact-btn li glass reveal">
-                    <span class="cb-icon cb-icon--svg" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6.5 8.5a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5zM5 10h3v10H5V10zm5 0h2.9v1.4h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.6V20h-3v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.74V20h-3V10z"/>
-                        </svg>
-                    </span>
+                    <span class="cb-icon" aria-hidden="true"><i class="ph-thin ph-linkedin-logo cyber-icon"></i></span>
                     <div class="cb-text">
                         <div class="cb-label">LinkedIn</div>
                         <div class="cb-value">Баэл Асланбеков</div>
                     </div>
-                    <span class="cb-arrow" aria-hidden="true">→</span>
+                    <span class="cb-arrow" aria-hidden="true"><i class="ph-thin ph-arrow-square-out cyber-icon"></i></span>
                 </a>
                 <a href="https://www.instagram.com/bael.aslanbekow/" target="_blank" rel="noopener noreferrer" class="contact-btn ig glass reveal">
-                    <span class="cb-icon cb-icon--svg" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.5"/>
-                            <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
-                            <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/>
-                        </svg>
-                    </span>
+                    <span class="cb-icon" aria-hidden="true"><i class="ph-thin ph-instagram-logo cyber-icon"></i></span>
                     <div class="cb-text">
                         <div class="cb-label">Instagram</div>
                         <div class="cb-value">@bael.aslanbekow</div>
                     </div>
-                    <span class="cb-arrow" aria-hidden="true">→</span>
+                    <span class="cb-arrow" aria-hidden="true"><i class="ph-thin ph-arrow-square-out cyber-icon"></i></span>
                 </a>
                 <a href="https://x.com/Aslanbekov16469" target="_blank" rel="noopener noreferrer" class="contact-btn x-tw glass reveal">
-                    <span class="cb-icon cb-icon--svg" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 4l7.2 9.6L4.5 20h2.5l4.8-6.3L15.8 20H20l-7.5-10.1L19 4h-2.5l-4.4 5.8L8.6 4H4z"/>
-                        </svg>
-                    </span>
+                    <span class="cb-icon" aria-hidden="true"><i class="ph-thin ph-x-logo cyber-icon"></i></span>
                     <div class="cb-text">
                         <div class="cb-label">X / Twitter</div>
                         <div class="cb-value">@Aslanbekov16469</div>
                     </div>
-                    <span class="cb-arrow" aria-hidden="true">→</span>
+                    <span class="cb-arrow" aria-hidden="true"><i class="ph-thin ph-arrow-square-out cyber-icon"></i></span>
                 </a>
             </div>
         </div>
@@ -619,11 +604,11 @@
 
     <footer>
         <div class="container">
-            <span>[V3.0 NEO-GLASS]</span> &copy; 2026 ASLANBEKOV_BAEL &mdash; <span>BUILT FOR THE FUTURE</span>
+            <span>[ BAEL_OS v2.0 ]</span> &copy; 2026 ASLANBEKOV_BAEL &mdash; <span>SYS.NOMINAL</span>
         </div>
     </footer>
 
-    <script src="script.js?v=9"></script>
+    <script src="script.js?v=11"></script>
 </body>
 
 </html>
